@@ -1,7 +1,13 @@
 package siberteam.takushinov;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        ArrayList<PokerHand> hands = new ArrayList<PokerHand>();
+        hands.add(new PokerHand("KS 2H 5C JD TD"));
+        hands.add(new PokerHand("2C 3C AC 4C 5C"));
+        Collections.sort(hands);
     }
 }

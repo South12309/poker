@@ -3,9 +3,14 @@ package siberteam.takushinov;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-@AllArgsConstructor
+
 @Getter
 public class Card {
-    private char value;
-    private char suit;
+    private final char value;
+    private final char suit;
+
+    public Card(String cardString) {
+        value = cardString.charAt(0);
+        suit = cardString.charAt(1);
+    }
 }
