@@ -1,5 +1,6 @@
 package siberteam.takushinov;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -19,7 +20,7 @@ public class CheckerCombination {
         if (suits.size()==1) {
             flash = true;
         }
-        List<Integer> sortedListCardValues = analiseValues.keySet().stream().sorted().toList();
+        List<Integer> sortedListCardValues = analiseValues.keySet().stream().sorted(Comparator.reverseOrder()).toList();
         if (analiseValues.size() == 5) {
             street = true;
             for (int i = 1; i < sortedListCardValues.size(); i++) {

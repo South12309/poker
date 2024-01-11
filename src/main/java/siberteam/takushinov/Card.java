@@ -12,7 +12,7 @@ public class Card {
     private final Suit suit;
 
     public Card(String cardString) {
-        this.value = Arrays.stream(ValueCard.values()).filter((x) -> x.getCardValue() == cardString.charAt(0)).findFirst().orElseThrow();
+        this.value = Arrays.stream(ValueCard.values()).filter(x -> x.getCardValue() == cardString.charAt(0)).findFirst().orElseThrow();
         suit = Suit.valueOf(String.valueOf(cardString.charAt(1)));
     }
 }
