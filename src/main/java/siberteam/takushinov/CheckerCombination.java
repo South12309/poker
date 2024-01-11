@@ -1,5 +1,7 @@
 package siberteam.takushinov;
 
 public class CheckerCombination {
-    private Combination combination;
+    public static Combination check(PokerHand pokerHand) {
+
+    }
 }

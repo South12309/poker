@@ -11,5 +11,4 @@ public enum Combination {
     KARE,
     STREET_FLASH,
     FLASHROYAL
-
 }

@@ -3,14 +3,16 @@ package siberteam.takushinov;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import java.util.Arrays;
+
 
 @Getter
 public class Card {
-    private final char value;
-    private final char suit;
+    private final ValueCard value;
+    private final Suit suit;
 
     public Card(String cardString) {
-        value = cardString.charAt(0);
-        suit = cardString.charAt(1);
+        this.value = Arrays.stream(ValueCard.values()).filter((x) -> x.getCardValue() == cardString.charAt(0)).findFirst().orElseThrow();
+        suit = Suit.valueOf(String.valueOf(cardString.charAt(1)));
     }
 }
