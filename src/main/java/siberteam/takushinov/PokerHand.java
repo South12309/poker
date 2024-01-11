@@ -14,6 +14,10 @@ public class PokerHand implements Comparable<PokerHand>{
         }
     }
 
+    public List<Card> getCards() {
+        return cards;
+    }
+
     @Override
     public int compareTo(PokerHand o) {
         return 0;
