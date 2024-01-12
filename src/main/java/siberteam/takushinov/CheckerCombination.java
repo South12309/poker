@@ -7,7 +7,8 @@ import java.util.List;
 import java.util.Map;
 
 public class CheckerCombination {
-    public static Combination check(PokerHand pokerHand) {
+    private static final int ACE_NUMBER=14;
+    public static CombinationAndKiker check(PokerHand pokerHand) {
         HashMap<Integer, Integer> analiseValues = new HashMap<>();
         HashSet<String> suits = new HashSet<>();
         boolean flash = false;
@@ -30,17 +31,17 @@ public class CheckerCombination {
                 }
             }
         }
-        if (flash && street && sortedListCardValues.get(0)==14) {
-            return Combination.FLASHROYAL;
+        if (flash && street && sortedListCardValues.get(0)==ACE_NUMBER) {
+            return new CombinationAndKiker(Combination.FLASHROYAL, sortedListCardValues);
         }
         if (flash && street) {
-            return Combination.STREET_FLASH;
+            return new CombinationAndKiker(Combination.STREET_FLASH, sortedListCardValues);
         }
         if (street) {
-            return Combination.STREET;
+            return new CombinationAndKiker(Combination.STREET, sortedListCardValues);
         }
         if (flash) {
-            return Combination.FLASH;
+            return new CombinationAndKiker(Combination.FLASH, sortedListCardValues);
         }
 
         boolean pair=false;
@@ -63,20 +64,20 @@ public class CheckerCombination {
             }
         }
         if (kare) {
-            return Combination.KARE;
+            return new CombinationAndKiker(Combination.KARE, sortedListCardValues);
         }
         if (twoPairs) {
-            return Combination.TWO_PAIRS;
+            return new CombinationAndKiker(Combination.TWO_PAIRS, sortedListCardValues);
         }
         if(pair && set) {
-            return Combination.FULL_HOUSE;
+            return new CombinationAndKiker(Combination.FULL_HOUSE, sortedListCardValues);
         }
         if(set) {
-            return Combination.SET;
+            return new CombinationAndKiker(Combination.SET, sortedListCardValues);
         }
         if (pair) {
-            return Combination.PAIR;
+            return new CombinationAndKiker(Combination.PAIR, sortedListCardValues);
         }
-        return Combination.HIGH_CARD;
+        return new CombinationAndKiker(Combination.HIGH_CARD, sortedListCardValues);
     }
 }
