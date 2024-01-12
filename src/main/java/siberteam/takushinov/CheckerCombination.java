@@ -1,5 +1,6 @@
 package siberteam.takushinov;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -64,20 +65,54 @@ public class CheckerCombination {
             }
         }
         if (kare) {
-            return new CombinationAndKiker(Combination.KARE, sortedListCardValues);
+            List<Integer> sortedCardValuesConsideringCombination = sortCardsValuesConsiderCombination(sortedListCardValues, analiseValues);
+            return new CombinationAndKiker(Combination.KARE, sortedCardValuesConsideringCombination);
         }
         if (twoPairs) {
-            return new CombinationAndKiker(Combination.TWO_PAIRS, sortedListCardValues);
+            List<Integer> sortedCardValuesConsideringCombination = sortCardsValuesConsiderCombination(sortedListCardValues, analiseValues);
+            return new CombinationAndKiker(Combination.TWO_PAIRS, sortedCardValuesConsideringCombination);
         }
         if(pair && set) {
-            return new CombinationAndKiker(Combination.FULL_HOUSE, sortedListCardValues);
+            List<Integer> sortedCardValuesConsideringCombination = sortCardsValuesConsiderCombination(sortedListCardValues, analiseValues);
+            return new CombinationAndKiker(Combination.FULL_HOUSE, sortedCardValuesConsideringCombination);
         }
         if(set) {
-            return new CombinationAndKiker(Combination.SET, sortedListCardValues);
+            List<Integer> sortedCardValuesConsideringCombination = sortCardsValuesConsiderCombination(sortedListCardValues, analiseValues);
+            return new CombinationAndKiker(Combination.SET, sortedCardValuesConsideringCombination);
         }
         if (pair) {
-            return new CombinationAndKiker(Combination.PAIR, sortedListCardValues);
+            List<Integer> sortedCardValuesConsideringCombination = sortCardsValuesConsiderCombination(sortedListCardValues, analiseValues);
+            return new CombinationAndKiker(Combination.PAIR, sortedCardValuesConsideringCombination);
         }
         return new CombinationAndKiker(Combination.HIGH_CARD, sortedListCardValues);
+    }
+
+    private static List<Integer> sortCardsValuesConsiderCombination(List<Integer> sortedListCardValues, HashMap<Integer, Integer> analiseValues) {
+        List<Integer> sortedCardValuesConsideringCombination = new ArrayList<>();
+        int indexToInsetValueCardNotIncludedInCombination=0;
+        boolean isContainsSetCombination=false;
+        for (int i = sortedListCardValues.size()-1; i >=0 ; i--) {
+            Integer countCardsWithSameValue = analiseValues.get(sortedListCardValues.get(i));
+            if (countCardsWithSameValue >2) {
+                sortedCardValuesConsideringCombination.add(0, sortedListCardValues.get(i));
+                indexToInsetValueCardNotIncludedInCombination++;
+                if (countCardsWithSameValue ==4) {
+                    return sortedCardValuesConsideringCombination;
+                }
+                if (countCardsWithSameValue ==3) {
+                    isContainsSetCombination=true;
+                }
+            }
+            if (countCardsWithSameValue ==2) {
+                if(isContainsSetCombination) {
+                    sortedCardValuesConsideringCombination.add(1, sortedListCardValues.get(i));
+                } else {
+                    sortedCardValuesConsideringCombination.add(0, sortedListCardValues.get(i));
+                }
+                indexToInsetValueCardNotIncludedInCombination++;
+            }
+            sortedCardValuesConsideringCombination.add(indexToInsetValueCardNotIncludedInCombination, sortedListCardValues.get(i));
+        }
+        return sortedCardValuesConsideringCombination;
     }
 }
