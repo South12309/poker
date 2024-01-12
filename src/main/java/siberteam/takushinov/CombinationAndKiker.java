@@ -1,7 +1,9 @@
 package siberteam.takushinov;
 
-import java.util.List;
+import lombok.Getter;
 
+import java.util.List;
+@Getter
 public class CombinationAndKiker {
     private final Combination combination;
     private final List<Integer> kikerList;

@@ -6,47 +6,47 @@ import org.junit.Test;
 public class CheckerCombinationTest {
     @Test
     public void checkFlashRoyal() {
-        Combination tsQsKsAsJs = CheckerCombination.check(new PokerHand("TS QS KS AS JS"));
-        Assert.assertEquals(Combination.FLASHROYAL, tsQsKsAsJs);
+        CombinationAndKiker tsQsKsAsJs = CheckerCombination.check(new PokerHand("TS QS KS AS JS"));
+        Assert.assertEquals(Combination.FLASHROYAL, tsQsKsAsJs.getCombination());
     }
     @Test
     public void checkStreetFlash() {
-        Combination tsQsKsAsJs = CheckerCombination.check(new PokerHand("TS QS KS 9S JS"));
-        Assert.assertEquals(Combination.STREET_FLASH, tsQsKsAsJs);
+        CombinationAndKiker tsQsKsAsJs = CheckerCombination.check(new PokerHand("TS QS KS 9S JS"));
+        Assert.assertEquals(Combination.STREET_FLASH, tsQsKsAsJs.getCombination());
     }
     @Test
     public void checkKare() {
-        Combination tsQsKsAsJs = CheckerCombination.check(new PokerHand("KS QD QS QC QH"));
-        Assert.assertEquals(Combination.KARE, tsQsKsAsJs);
+        CombinationAndKiker tsQsKsAsJs = CheckerCombination.check(new PokerHand("KS QD QS QC QH"));
+        Assert.assertEquals(Combination.KARE, tsQsKsAsJs.getCombination());
     }
     @Test
     public void checkFullHouse() {
-        Combination tsQsKsAsJs = CheckerCombination.check(new PokerHand("KS QD QS QC KH"));
-        Assert.assertEquals(Combination.FULL_HOUSE, tsQsKsAsJs);
+        CombinationAndKiker tsQsKsAsJs = CheckerCombination.check(new PokerHand("KS QD QS QC KH"));
+        Assert.assertEquals(Combination.FULL_HOUSE, tsQsKsAsJs.getCombination());
     }
     @Test
     public void checkFlash() {
-        Combination tsQsKsAsJs = CheckerCombination.check(new PokerHand("KS QS QS QS KS"));
-        Assert.assertEquals(Combination.FLASH, tsQsKsAsJs);
+        CombinationAndKiker tsQsKsAsJs = CheckerCombination.check(new PokerHand("KS QS QS QS KS"));
+        Assert.assertEquals(Combination.FLASH, tsQsKsAsJs.getCombination());
     }
     @Test
     public void checkStreet() {
-        Combination tsQsKsAsJs = CheckerCombination.check(new PokerHand("TS QS KH 9S JD"));
-        Assert.assertEquals(Combination.STREET, tsQsKsAsJs);
+        CombinationAndKiker tsQsKsAsJs = CheckerCombination.check(new PokerHand("TS QS KH 9S JD"));
+        Assert.assertEquals(Combination.STREET, tsQsKsAsJs.getCombination());
     }
     @Test
     public void checkSet() {
-        Combination tsQsKsAsJs = CheckerCombination.check(new PokerHand("TS QS TH 9S TD"));
-        Assert.assertEquals(Combination.SET, tsQsKsAsJs);
+        CombinationAndKiker tsQsKsAsJs = CheckerCombination.check(new PokerHand("TS QS TH 9S TD"));
+        Assert.assertEquals(Combination.SET, tsQsKsAsJs.getCombination());
     }
     @Test
     public void checkTwoPairs() {
-        Combination tsQsKsAsJs = CheckerCombination.check(new PokerHand("TS QS TH 9S 9D"));
-        Assert.assertEquals(Combination.TWO_PAIRS, tsQsKsAsJs);
+        CombinationAndKiker tsQsKsAsJs = CheckerCombination.check(new PokerHand("TS QS TH 9S 9D"));
+        Assert.assertEquals(Combination.TWO_PAIRS, tsQsKsAsJs.getCombination());
     }
     @Test
     public void checkPair() {
-        Combination tsQsKsAsJs = CheckerCombination.check(new PokerHand("TS QS TH 9S 8D"));
-        Assert.assertEquals(Combination.PAIR, tsQsKsAsJs);
+        CombinationAndKiker tsQsKsAsJs = CheckerCombination.check(new PokerHand("TS QS TH 9S 8D"));
+        Assert.assertEquals(Combination.PAIR, tsQsKsAsJs.getCombination());
     }
 }
