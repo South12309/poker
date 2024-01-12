@@ -2,6 +2,8 @@ package siberteam.takushinov;
 
 import org.junit.Assert;
 import org.junit.Test;
+import siberteam.takushinov.combination.Combination;
+import siberteam.takushinov.combination.CombinationAndKiker;
 
 public class CheckerCombinationTest {
     @Test

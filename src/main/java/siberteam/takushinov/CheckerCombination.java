@@ -1,5 +1,9 @@
 package siberteam.takushinov;
 
+import siberteam.takushinov.card.Card;
+import siberteam.takushinov.combination.Combination;
+import siberteam.takushinov.combination.CombinationAndKiker;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;

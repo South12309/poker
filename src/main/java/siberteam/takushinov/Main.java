@@ -1,11 +1,13 @@
 package siberteam.takushinov;
 
+import siberteam.takushinov.card.Card;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<PokerHand> hands = new ArrayList<PokerHand>();
+        ArrayList<PokerHand> hands = new ArrayList<>();
         hands.add(new PokerHand("TS QS KS 9S JS"));
         hands.add(new PokerHand("TS QS KH 9S JD"));
         hands.add(new PokerHand("TS QS KS AS JS"));

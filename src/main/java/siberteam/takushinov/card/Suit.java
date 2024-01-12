@@ -1,4 +1,4 @@
-package siberteam.takushinov;
+package siberteam.takushinov.card;
 
 public enum Suit {
     S,

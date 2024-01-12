@@ -1,6 +1,5 @@
-package siberteam.takushinov;
+package siberteam.takushinov.card;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 import java.util.Arrays;

@@ -1,6 +1,8 @@
 package siberteam.takushinov;
 
 import lombok.Getter;
+import siberteam.takushinov.card.Card;
+import siberteam.takushinov.combination.CombinationAndKiker;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package siberteam.takushinov;
+package siberteam.takushinov.combination;
 
 public enum Combination {
     HIGH_CARD,
