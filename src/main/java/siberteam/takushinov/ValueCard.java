@@ -1,5 +1,8 @@
 package siberteam.takushinov;
 
+import lombok.Getter;
+
+@Getter
 public enum ValueCard {
     TWO('2', 2),
     THREE('3', 3),
@@ -20,13 +23,5 @@ public enum ValueCard {
     ValueCard(char cardValue, int number) {
         this.cardValue = cardValue;
         this.number = number;
-    }
-
-    public char getCardValue() {
-        return cardValue;
-    }
-
-    public int getNumber() {
-        return number;
     }
 }

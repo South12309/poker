@@ -4,7 +4,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class PokerHandTest {
-
     @Test
     public void compareSameCombinationTwoPairs() {
         PokerHand pokerHand1 = new PokerHand("KS 9D 2S 2H 9C");

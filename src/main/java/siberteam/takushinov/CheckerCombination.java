@@ -86,7 +86,6 @@ public class CheckerCombination {
         }
         return new CombinationAndKiker(Combination.HIGH_CARD, sortedListCardValues);
     }
-
     private static List<Integer> sortCardsValuesConsiderCombination(List<Integer> sortedListCardValues, HashMap<Integer, Integer> analiseValues) {
         List<Integer> sortedCardValuesConsideringCombination = new ArrayList<>();
         int indexToInsetValueCardNotIncludedInCombination=0;
