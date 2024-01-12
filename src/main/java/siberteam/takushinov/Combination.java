@@ -3,7 +3,7 @@ package siberteam.takushinov;
 public enum Combination {
     HIGH_CARD,
     PAIR,
-    TOW_PAIRS,
+    TWO_PAIRS,
     SET,
     STREET,
     FLASH,

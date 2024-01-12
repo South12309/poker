@@ -44,13 +44,13 @@ public class CheckerCombination {
         }
 
         boolean pair=false;
-        boolean towPair=false;
+        boolean twoPairs=false;
         boolean set=false;
         boolean kare=false;
         for (Map.Entry<Integer, Integer> entry : analiseValues.entrySet()) {
             if (entry.getValue()==2) {
                 if (pair) {
-                    towPair = true;
+                    twoPairs = true;
                 } else {
                     pair=true;
                 }
@@ -65,8 +65,8 @@ public class CheckerCombination {
         if (kare) {
             return Combination.KARE;
         }
-        if (towPair) {
-            return Combination.TOW_PAIRS;
+        if (twoPairs) {
+            return Combination.TWO_PAIRS;
         }
         if(pair && set) {
             return Combination.FULL_HOUSE;
